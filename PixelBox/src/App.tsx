@@ -1,50 +1,77 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
-function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
-
+function Home() {
   return (
     <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+        <Link to="/my-cameras" style={{backgroundColor:"red"}}>
+        <h1>PixelBox</h1>
+        <h2>MY CAM</h2>
+        <div className="white-box">
+            <p></p>
+        </div>
+        </Link>
+        <Link to="/lab">
+        <h2>LAB</h2>
+        <div className="white-box">
+          <p></p>
+        </div>
+        </Link>
+        <Link to="/info">
+          <h2>INFO</h2>
+          <div className="white-box">
+            <p></p>
+          </div>
+        </Link>
 
-      <div className="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
     </main>
+  );
+}
+
+function MyCamera() {
+  return (
+    <div className="container">
+      <h1>My Cam</h1>
+      <div className="white-box">
+        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+      </div>
+      <h2><Link to="/" className="h2">Home</Link></h2>
+    </div>
+  );
+}
+
+function Lab() {
+  return (
+    <div className="container">
+      <h1>Lab</h1>
+      <div className="white-box">
+        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+      </div>
+      <h2><Link to="/" className="h2">Home</Link></h2>
+    </div>
+  );
+}
+
+function Info() {
+  return (
+    <div className="container">
+      <h1>Info</h1>
+      <div className="white-box">
+        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+      </div>
+      <h2><Link to="/" className="h2">Home</Link></h2>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/my-cameras" element={<MyCamera />} />
+      <Route path="/lab" element={<Lab />} />
+      <Route path="/info" element={<Info />} />
+    </Routes>
   );
 }
 
