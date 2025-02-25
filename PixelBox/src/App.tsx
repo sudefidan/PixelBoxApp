@@ -4,25 +4,25 @@ import "./App.css";
 function Home() {
   return (
     <main className="container">
-        <Link to="/my-cameras" style={{backgroundColor:"red"}}>
-        <h1>PixelBox</h1>
+      <h1>PixelBox</h1>
+      <Link to="/my-cameras">
         <h2>MY CAM</h2>
         <div className="white-box">
-            <p></p>
+          <p></p>
         </div>
-        </Link>
-        <Link to="/lab">
+      </Link>
+      <Link to="/lab">
         <h2>LAB</h2>
         <div className="white-box">
           <p></p>
         </div>
-        </Link>
-        <Link to="/info">
-          <h2>INFO</h2>
-          <div className="white-box">
-            <p></p>
-          </div>
-        </Link>
+      </Link>
+      <Link to="/info">
+        <h2>INFO</h2>
+        <div className="white-box">
+          <p></p>
+        </div>
+      </Link>
 
     </main>
   );
@@ -31,11 +31,17 @@ function Home() {
 function MyCamera() {
   return (
     <div className="container">
-      <h1>My Cam</h1>
+      <h1>My Camera</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to Home page.</p>
+        <p>
+          <strong>Your camera is missing in action! </strong>
+          <br></br><br></br>
+          Connect now to start shooting.</p>
       </div>
-      <h2><Link to="/" className="h2">Home</Link></h2>
+      <div className="button-container">
+      <h2><Link to="/" className="button">Connect</Link></h2>
+      </div >
+      <Link to="/" className="back-to-home">Home</Link>
     </div>
   );
 }
@@ -45,9 +51,12 @@ function Lab() {
     <div className="container">
       <h1>Lab</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to Home page.</p>
+        <p>
+          <strong>Your Lab looks a little quiet…</strong>
+          <br></br><br></br>
+          Snap some photos, let them develop, and return to see the results.</p>
       </div>
-      <h2><Link to="/" className="h2">Home</Link></h2>
+      <Link to="/" className="back-to-home">Home</Link>
     </div>
   );
 }
@@ -59,7 +68,7 @@ function Info() {
       <div className="white-box">
         <p>This is a white box. Click here to go to Home page.</p>
       </div>
-      <h2><Link to="/" className="h2">Home</Link></h2>
+      <Link to="/" className="back-to-home">Home</Link>
     </div>
   );
 }

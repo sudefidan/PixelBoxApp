@@ -1,11 +1,18 @@
 :root {
-  font-family: 'Permanent Marker', serif;
+  font-family: 'Exo 2', serif;
   font-size: 16px;
   font-weight: 400;
   color: white;
   background-color: black;
   position: relative;
   z-index: -1;
+  --safe-area-inset-top: 0px;
+  height: 100%;
+  /* Ensure the root element takes up the full viewport height */
+  width: 100%;
+  /* Ensure the root element takes up the full viewport width */
+  overflow: hidden;
+  /* Prevent content from overflowing */
 
 }
 
@@ -14,12 +21,11 @@
   content: "";
   position: absolute;
   top: 0;
-  margin-top: -6%;
   height: 100%;
   width: 15%;
   z-index: -1;
   background-repeat: repeat;
-  background-size: 100% 8%;
+  background-size: 100% 7.5%;
 }
 
 
@@ -43,11 +49,9 @@
   margin-left: 9%;
   margin-right: 9%;
   height: 100vh;
-  margin-top: 0;
-  z-index:1;
-  /* Ensure the container fills the screen */
+  z-index: 1;
+  padding-top: var(--safe-area-inset-top);
 }
-
 
 .white-box {
   width: 70%;
@@ -57,7 +61,10 @@
   color: black;
   border-radius: 15px;
   margin: 0 auto;
-    /* Center horizontally */
+}
+
+p {
+  padding: 10%;
 }
 
 .row {
@@ -77,72 +84,53 @@ a:hover {
 
 h1 {
   text-align: center;
-  font-size: 3.15em;
+  font-size: 3.5em;
   color: #d08a7f;
-  margin-top: 6%;
-  margin-bottom:0;
+  padding-top: 5%;
+  margin-bottom: 0;
 }
 
 h2 {
   text-align: center;
   font-size: 1.5em;
   color: white;
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+.button-container {
+  margin-top: 15%;
 }
 
-button {
+
+.button {
+  color: #d08a7f;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #d08a7f;
   cursor: pointer;
-}
-
-button:hover {
-  border-color: #396cd8;
-}
-
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
   outline: none;
 }
 
-#greet-input {
-  margin-right: 5px;
+
+button:hover {
+  color: #d08a7f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
+.button:active {
+  color: #d08a7f;
+  border-color: #d08a7f;
+}
 
-  a:hover {
-    color: #24c8db;
-  }
 
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-
-  button:active {
-    background-color: #0f0f0f69;
-  }
+.back-to-home {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #535bf2;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.5em;
 }
