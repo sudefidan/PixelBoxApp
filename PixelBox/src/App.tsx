@@ -1,5 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import { useEffect, useState } from "react";
+import { getVersion } from '@tauri-apps/api/app';
 
 function Home() {
   return (
@@ -31,7 +33,7 @@ function Home() {
 function MyCamera() {
   return (
     <div className="container">
-      <h1>My Camera</h1>
+      <h1>My Cam</h1>
       <div className="white-box">
         <p>
           <strong>Your camera is missing in action! </strong>
@@ -62,12 +64,24 @@ function Lab() {
 }
 
 function Info() {
+  const [version, setVersion] = useState("");
+
+  useEffect(() => {
+    const fetchVersion = async () => {
+      const version = await getVersion();
+      setVersion(version);
+    };
+
+    fetchVersion();
+  }, []);
+
   return (
     <div className="container">
       <h1>Info</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to Home page.</p>
+        <p></p>
       </div>
+      <h3>App Version: {version}</h3>
       <Link to="/" className="back-to-home">Home</Link>
     </div>
   );
