@@ -33,7 +33,7 @@ function MyCamera() {
     <div className="container">
       <h1>My Cam</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+        <p>This is a white box. Click here to go to Home page.</p>
       </div>
       <h2><Link to="/" className="h2">Home</Link></h2>
     </div>
@@ -45,7 +45,7 @@ function Lab() {
     <div className="container">
       <h1>Lab</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+        <p>This is a white box. Click here to go to Home page.</p>
       </div>
       <h2><Link to="/" className="h2">Home</Link></h2>
     </div>
@@ -57,7 +57,7 @@ function Info() {
     <div className="container">
       <h1>Info</h1>
       <div className="white-box">
-        <p>This is a white box. Click here to go to MY CAMERAS page.</p>
+        <p>This is a white box. Click here to go to Home page.</p>
       </div>
       <h2><Link to="/" className="h2">Home</Link></h2>
     </div>
