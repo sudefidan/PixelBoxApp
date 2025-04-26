@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		43FAC35AB3C222A6CE9588E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 586A26A0E444A83C72BF7994 /* Assets.xcassets */; };
 		64F24F216299D6F549A762FD /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA80CC162B45B55E418A4BC7 /* Metal.framework */; };
 		6E550BFE46A3BEC998D7A714 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1111B1E41D90DC7FD210C8F /* main.mm */; };
+		801C2FD42D8C8B1100E16D91 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801C2FD32D8C8B1100E16D91 /* CoreBluetooth.framework */; };
 		82A8533EBF5E2287CF87E7AD /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25008C32794CEBF221A5640 /* MetalKit.framework */; };
 		AB6D1CFF710631CCCD9349D7 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 99AE3BCF97AF7F28DADD6EE6 /* assets */; };
 		B33948349960CCEF0B1F8BEA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36FB34AD571142593F81C1 /* CoreGraphics.framework */; };
@@ -22,14 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		12A25EE14126951BD0F60E6F /* lib.rs */ = {isa = PBXFileReference; path = lib.rs; sourceTree = "<group>"; };
+		12A25EE14126951BD0F60E6F /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
 		4ED00BC589782B34BD395293 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		586A26A0E444A83C72BF7994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		654CEA0E15FC5B61857A1444 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		6AA63284326FBE28A4EE9EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6D0B2E179AC8A1F7C3D696F3 /* bindings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bindings.h; sourceTree = "<group>"; };
-		79994A4B6CC6170234098049 /* pixelbox_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = pixelbox_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		95310F4ED784E5D4BAE1E521 /* main.rs */ = {isa = PBXFileReference; path = main.rs; sourceTree = "<group>"; };
+		79994A4B6CC6170234098049 /* pixelbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pixelbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		801C2FD32D8C8B1100E16D91 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		95310F4ED784E5D4BAE1E521 /* main.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.rs; sourceTree = "<group>"; };
 		99AE3BCF97AF7F28DADD6EE6 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
 		9A36FB34AD571142593F81C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9C47F383BD26E898CCDE5F21 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
@@ -48,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				065378EC6DC1FAC9652E8848 /* libapp.a in Frameworks */,
+				801C2FD42D8C8B1100E16D91 /* CoreBluetooth.framework in Frameworks */,
 				B33948349960CCEF0B1F8BEA /* CoreGraphics.framework in Frameworks */,
 				64F24F216299D6F549A762FD /* Metal.framework in Frameworks */,
 				82A8533EBF5E2287CF87E7AD /* MetalKit.framework in Frameworks */,
@@ -64,6 +67,7 @@
 		0545AA17A91EAA8F4CA70259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				801C2FD32D8C8B1100E16D91 /* CoreBluetooth.framework */,
 				9A36FB34AD571142593F81C1 /* CoreGraphics.framework */,
 				654CEA0E15FC5B61857A1444 /* libapp.a */,
 				EA80CC162B45B55E418A4BC7 /* Metal.framework */,
@@ -79,7 +83,7 @@
 		1DFC9BE056769C25D2DC2FDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79994A4B6CC6170234098049 /* pixelbox_iOS.app */,
+				79994A4B6CC6170234098049 /* pixelbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +172,7 @@
 			);
 			name = pixelbox_iOS;
 			productName = pixelbox_iOS;
-			productReference = 79994A4B6CC6170234098049 /* pixelbox_iOS.app */;
+			productReference = 79994A4B6CC6170234098049 /* pixelbox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -179,8 +183,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 97DB79364D0F4A62FB4829DC /* Build configuration list for PBXProject "pixelbox" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -260,6 +262,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pixelbox_iOS/pixelbox_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z67A2GTQYK;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -268,16 +271,38 @@
 					"\".\"",
 				);
 				INFOPLIST_FILE = pixelbox_iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PixelBox;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixelbox.app;
 				PRODUCT_NAME = pixelbox;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";
 			};
@@ -294,6 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = pixelbox_iOS/pixelbox_iOS.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z67A2GTQYK;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "arm64-sim x86_64";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -302,16 +328,38 @@
 					"\".\"",
 				);
 				INFOPLIST_FILE = pixelbox_iOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PixelBox;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=arm64]" = "$(inherited) $(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
-				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = "$(inherited) $(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION) $(SDKROOT)/usr/lib/swift $(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME) $(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)";
+				"LIBRARY_SEARCH_PATHS[arch=arm64-sim]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64-sim/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=arm64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/arm64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=x86_64]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Externals/x86_64/$(CONFIGURATION)",
+					"$(SDKROOT)/usr/lib/swift",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
+					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pixelbox.app;
 				PRODUCT_NAME = pixelbox;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64  arm64-sim";
 			};
