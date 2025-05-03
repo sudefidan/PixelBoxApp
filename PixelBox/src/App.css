@@ -253,7 +253,46 @@ button:hover {
   pointer-events: none;
 }
 
+.button-rounded {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px var(--green-shadow),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* This ensures the content doesn't spill outside the round container */
+}
 
+/* Update the button inside to fit properly */
+.button-rounded .button {
+  background: none;
+  /* Remove default button background */
+  border: none;
+  box-shadow: none;
+  /* Remove default button shadow */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* And update the camera icon to fit properly inside */
+.button-rounded .camera-icon {
+  width: 60%;
+  /* Make the icon a bit bigger inside the container */
+  height: auto;
+  pointer-events: none;
+}
 .info-icon {
   width: 38%;
   pointer-events: none;
@@ -320,3 +359,86 @@ button:hover {
   font-size: large;
   margin: 0;
 }
+
+.message-feed {
+  max-height: 30%;
+  min-height: 30%;
+  overflow-y: auto;
+  border-radius: 4px;
+  padding: 8px;
+  min-width: 20%;
+  max-width: 70%;
+  align-items: center;
+  align-self: center;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.message-item {
+  padding: 8px;
+  margin-bottom: 6px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.message-item:last-child {
+  margin-bottom: 0;
+}
+
+.empty-message {
+  color: #757575;
+  text-align: center;
+  font-style: italic;
+  padding: 10px;
+}
+
+
+.filter-row {
+  margin: 15px auto;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0%;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  background-color: var;
+  border-radius: 10px;
+  border: 2px solid var(--green-shadow);
+  background-color: var(--green);
+  font-family: "Kalam", cursive;
+  color:var(--white);
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgba(255, 255, 255, 0.1),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.filter-dropdown:focus,
+.filter-dropdown:hover {
+  background-color: var(--green);
+  border-color: var(--green-shadow);
+}
+
+.filter-option {
+  color: var(--pink);
+  /* Text color */
+  background-color: white;
+  /* Background color */
+  font-family: "Kalam", cursive;
+  color:#D6D7D8
+}
+
+/* Style for the selected option */
+option:checked {
+  background-color: var(--green);
+  color: white;
+}
+
+
