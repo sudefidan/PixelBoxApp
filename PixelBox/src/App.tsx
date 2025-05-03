@@ -38,9 +38,8 @@ function MyCamera() {
   const [_devices, setDevices] = useState<BleDevice[]>([]); // State to store the list of devices
   const [_deviceName, setDeviceName] = useState(localStorage.getItem('deviceName') || ''); // State to store the device name
   const [connected, setConnected] = useState(false); // State to track connection status
-  const [sendData, setSendData] = useState(''); // State to store data to send
   const [messages, setMessages] = useState<string[]>([]); // Store message history
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // State to store error messages
   const [loading, setLoading] = useState(true); // Add a loading state
   const [currentFilter, setCurrentFilter] = useState(0); // Track the selected filter
   const CHARACTERISTIC_UUID = 'beb5483e-36e1-4688-b7f5-ea07361b26a8';
@@ -56,31 +55,27 @@ function MyCamera() {
   ];
 
   useEffect(() => {
-    let cleanup: (() => void) | null = null;
-    // Use a reference to track the last message
-    const messageRef = { last: '' };
+    let cleanup: (() => void) | null = null; // Variable to store the cleanup function
+    const messageRef = { last: '' }; // Initialise last message to an empty string
 
     const subscription = getConnectionUpdates((state) => {
       setConnected(state);
       setLoading(false);
 
-      // Create a new subscription only if we're connected and don't have one yet
+      // Create a new subscription only if camera is connected and don't have one yet
       if (state && !cleanup) {
         subscribeString(CHARACTERISTIC_UUID, (data) => {
 
           // Only process if data is new and non-empty
           if (data && data !== messageRef.last) {
 
-            if (data && data.startsWith('filter:')) {
-              // Extract the filter name from the message (e.g., "filter:Normal" -> "Normal")
-              const filterNumber = data.split(':')[1].trim();
-
+            if (data && data.startsWith('filter:')) { // Check if the message starts with "filter:"
+              const filterNumber = data.split(':')[1].trim(); // Extract the filter number from the message (e.g., "filter:0" -> "0")
               setCurrentFilter(parseInt(filterNumber)); // Update the current filter state
             } else {
-
               messageRef.last = data; // Update the reference
 
-              // Add to message history (limit to last 5 messages)
+              // Add to message history
               setMessages(prevMessages => {
                 // Check if the new message is already the last one in the array
                 if (prevMessages.length > 0 && prevMessages[prevMessages.length - 1] === data) {
@@ -102,8 +97,8 @@ function MyCamera() {
       }
     });
 
-    const storedDeviceName = localStorage.getItem('deviceName');
-    if (storedDeviceName) {
+    const storedDeviceName = localStorage.getItem('deviceName'); // Retrieve the stored device name
+    if (storedDeviceName) { // If a device name is stored, set it in the state
       setDeviceName(storedDeviceName);
     }
 
@@ -134,8 +129,7 @@ function MyCamera() {
               try {
                 const initialData = await readString(CHARACTERISTIC_UUID);
                 if (initialData && initialData.startsWith('filter:')) {
-                  // Extract the filter name from the message (e.g., "filter:Normal" -> "Normal")
-                  const filterName = initialData.split(':')[1].trim();
+                  const filterName = initialData.split(':')[1].trim(); // Extract the filter name from the message (e.g., "filter:0" -> "0")
 
                   // Find the filter option that matches this name
                   const matchingFilter = filterOptions.find(f => f.label === filterName);
@@ -165,7 +159,7 @@ function MyCamera() {
     }
   }
 
-  const handleSendData = async () => {
+  const handleImageCapture = async () => {
     try {
       await sendString(CHARACTERISTIC_UUID, 'takephoto');
     } catch (error) {
@@ -216,9 +210,11 @@ function MyCamera() {
         </div>
       ) : (
         <div className="page-view">
+          
           <div className="center button-rounded">
-            <button className="button" onClick={handleSendData}> <img src={cameraImage} className="camera-icon" /></button>
+            <button className="button" onClick={handleImageCapture}> <img src={cameraImage} className="camera-icon" /></button>
           </div>
+          {/* Filter selection display */}
           <div className="row filter-row">
             <div className="filter-selector">
               <select
